@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nutricion.Pages.DatosPage"
+             Title="DatosPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="lblNombre">
+        </Label>
+        <Label
+            x:Name="lblPeso">
+        </Label>
+        <Label
+            x:Name="lblAltura">
+        </Label>
+        <ListView x:Name="lstRegistros">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Altura}"></Label>
+                            <Label Text="{Binding Peso}"></Label>
+                            <Label Text="{Binding Resultado}"></Label>
+                            <Label Text="{Binding Fecha}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            x:Name="btnIMC"
+            Text="Calcula el IMC"
+            Clicked="btnIMC_Clicked">
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
